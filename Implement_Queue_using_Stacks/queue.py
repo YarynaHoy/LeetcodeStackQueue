@@ -8,7 +8,7 @@ class Stack:
     def pop(self):
         return self.items.pop()
 
-    def peek(self):
+    def top(self):
         return self.items[-1]
 
     def empty(self):
@@ -34,7 +34,7 @@ class MyQueue:
         if self.out_q.empty():
             while not self.in_q.empty():
                 self.out_q.push(self.in_q.pop())
-        return self.out_q.peek()
+        return self.out_q.top()
 
     def empty(self) -> bool:
         return self.in_q.empty() and self.out_q.empty()
